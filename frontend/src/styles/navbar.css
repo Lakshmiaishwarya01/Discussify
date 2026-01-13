@@ -1,0 +1,436 @@
+/* =============================================
+   1. THE VIBRANT GLASS CONTAINER
+   ============================================= */
+.custom-navbar {
+  /* FIX: Force Fixed Position */
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030; /* High z-index to stay on top of content */
+
+  /* The "Interesting" Part: A deep, rich gradient */
+  background: linear-gradient(90deg, #1e1b4b 0%, #4338ca 50%, #312e81 100%);
+  
+  /* Glass Effect */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  padding: 0.8rem 1.5rem;
+  transition: all 0.4s ease;
+}
+
+/* When Scrolled: It deepens and shrinks slightly */
+.custom-navbar.scrolled {
+  padding: 0.6rem 1.5rem;
+  background: rgba(15, 23, 42, 0.95);
+  box-shadow: 0 10px 30px -10px rgba(2, 6, 23, 0.5);
+}
+
+/* =============================================
+   2. BRANDING (Logo)
+   ============================================= */
+.brand-metallic {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-right: 0.6rem;
+  /* Icon Background Glow */
+  background: linear-gradient(135deg, #ec4899, #8b5cf6);
+  border-radius: 12px; /* Soft square, not circle */
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.brand-metallic:hover .brand-icon {
+  transform: rotate(10deg) scale(1.1); /* Playful tilt on hover */
+}
+
+.brand-text {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* =============================================
+   3. THE SEARCH CAPSULE
+   ============================================= */
+.search-container {
+  max-width: 380px;
+  width: 100%;
+}
+
+/* The Outer Shell (The Capsule) */
+.input-group {
+  background: rgba(255, 255, 255, 0.15) !important; /* Slightly more visible bg */
+  border-radius: 50px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important; /* The ONLY border */
+  padding: 4px 10px; /* Spacing inside the capsule */
+  transition: all 0.3s ease;
+}
+
+/* Hover effect on the whole capsule */
+.input-group:hover {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* The Icon (Magnifying Glass) */
+.input-group-text.search-icon {
+  background: transparent !important;
+  border: none !important;
+  color: rgba(255, 255, 255, 0.7);
+  /* Give the icon a bit more horizontal space so it doesn't collide
+     visually with the placeholder text */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* The Input Field (Inner Box) */
+.form-control.search-input {
+  background: transparent !important; /* No background */
+  border: none !important; /* REMOVES THE UGLY BORDER */
+  color: #fff !important;
+  box-shadow: none !important; /* Removes blue glow on click */
+  /* Small left padding so placeholder text doesn't sit against the icon */
+  padding: 0 0 0 60px;
+}
+
+/* Placeholder Text Color */
+.form-control.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Focus State: Glow the CAPSULE, not the Input */
+.search-container:focus-within .input-group {
+  background: rgba(255, 255, 255, 0.25) !important;
+  border-color: #38bdf8 !important; /* Cyan glow border */
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+/* =============================================
+   4. NAVIGATION LINKS (Neon Glows)
+   ============================================= */
+.btn-nav-metallic {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  margin: 0 2px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.btn-nav-metallic:hover {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.1);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+/* Active State */
+.btn-nav-metallic.active {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* =============================================
+   5. ICONS & ACTIONS (Fixed Circle & Color)
+   ============================================= */
+.btn-icon-metallic {
+  /* Force White Icon Color */
+  color: rgba(255, 255, 255, 0.8) !important;
+  
+  /* Force Perfect Circle Shape */
+  width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important; /* Remove Bootstrap's rectangular padding */
+  border-radius: 50% !important;
+  
+  /* Flexbox to center the icon perfectly */
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  
+  /* Glassy Background */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.btn-icon-metallic:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  /* Circular Glow, not rectangular */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Remove the ugly blue square outline when clicked */
+.btn-icon-metallic:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.3) !important;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: bold;
+  padding: 2px 5px;
+  border-radius: 10px;
+  border: 2px solid #312e81; /* Creates the "cutout" look */
+  line-height: 1;
+}
+
+/* =============================================
+   6. USER PROFILE & DROPDOWN (Fixed Hover)
+   ============================================= */
+.user-profile-btn {
+  /* Reset Bootstrap Button Styles */
+  background: transparent !important;
+  padding: 0 !important;
+  border: none !important;
+  
+  /* Container Constraints */
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50% !important; /* Force Circle */
+  
+  margin-left: 10px;
+  position: relative;
+  transition: all 0.3s;
+  
+  /* Center the image inside */
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The Image itself handles the border/shape */
+.user-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50% !important;
+  object-fit: cover;
+  border: 2px solid rgba(255, 255, 255, 0.2); /* The Border is on the IMG */
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* When hovering the BUTTON, glow the IMAGE */
+.user-profile-btn:hover .user-avatar {
+  border-color: #38bdf8; /* Cyan */
+  box-shadow: 0 0 15px rgba(56, 189, 248, 0.5); /* Circular Cyan Glow */
+}
+
+/* Remove blue focus square on profile */
+.user-profile-btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* The Dropdown Menu - Dark Glass Theme */
+.dropdown-menu-metallic {
+  position: absolute;
+  top: 100%;
+  right: 0; /* Anchors to the right edge of the profile button */
+  min-width: 240px; /* Wider for better readability */
+  margin-top: 12px;
+  
+  /* Dark Glass Background */
+  background: rgba(30, 41, 59, 0.95); /* Dark Slate */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px -5px rgba(0,0,0,0.4);
+  
+  padding: 0.5rem;
+  overflow: hidden;
+  z-index: 1050; /* Ensures it stays on top */
+  animation: slideDown 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Header Section inside Dropdown */
+.dropdown-header-metallic {
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 5px;
+}
+
+.dropdown-header-metallic strong {
+  color: #fff;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.dropdown-header-metallic small {
+  color: #94a3b8; /* Muted text */
+  font-size: 0.8rem;
+}
+
+/* Dropdown Items */
+.dropdown-item-metallic {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 10px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #cbd5e1; /* Light gray text */
+  font-size: 0.9rem;
+  text-align: left;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.dropdown-item-metallic:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transform: translateX(4px);
+}
+
+.dropdown-item-metallic i {
+  margin-right: 10px;
+  font-size: 1.1rem;
+  color: #94a3b8;
+}
+
+.dropdown-item-metallic:hover i {
+  color: #38bdf8; /* Icon glows cyan */
+}
+
+.dropdown-divider-metallic {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 6px 0;
+}
+
+/* =============================================
+   7. MOBILE TOGGLER
+   ============================================= */
+.navbar-toggler {
+  border: none;
+  background: rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.3);
+}
+
+/* =============================================
+   8. RESPONSIVE DESIGN
+   ============================================= */
+@media (max-width: 991px) {
+  /* Mobile/Tablet Navbar Adjustments */
+  .custom-navbar {
+    padding: 0.6rem 1rem;
+  }
+
+  .brand-text {
+    font-size: 1.2rem;
+  }
+
+  .brand-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1.3rem;
+  }
+
+  /* Search bar takes full width on mobile */
+  .search-container {
+    max-width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  /* Smaller nav buttons on mobile */
+  .btn-nav-metallic {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  /* Adjust icon buttons */
+  .btn-icon-metallic {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .user-profile-btn {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  /* Dropdown menu full width on mobile */
+  .dropdown-menu-metallic {
+    min-width: 200px;
+    right: 0;
+    left: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Extra small screens */
+  .custom-navbar {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .brand-text {
+    font-size: 1.1rem;
+  }
+
+  .search-container {
+    order: 3; /* Move search below nav items on very small screens */
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .form-control.search-input {
+    padding: 0 0 0 50px; /* Reduce padding on mobile */
+    font-size: 0.9rem;
+  }
+
+  .input-group-text.search-icon {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  /* Stack login buttons vertically on very small screens */
+  .navbar-nav .d-flex.align-items-center.gap-3 {
+    flex-direction: column;
+    gap: 0.5rem !important;
+    width: 100%;
+  }
+
+  .navbar-nav .d-flex.align-items-center.gap-3 .btn {
+    width: 100%;
+  }
+}

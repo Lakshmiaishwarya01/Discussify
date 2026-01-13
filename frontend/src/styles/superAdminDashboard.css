@@ -1,0 +1,288 @@
+/* superAdminDashboard.css
+   Polished layout & visual system for SuperAdminDashboard
+   - KPI cards, tables, avatars, badges, buttons, responsiveness
+*/
+
+/* Root helpers */
+.super-admin-dashboard {
+  font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #0f172a; /* dark slate */
+}
+
+/* Header */
+.super-admin-dashboard .d-flex.align-items-center h2 {
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+.super-admin-dashboard .badge.bg-dark {
+  background: #111827;
+  color: #fff;
+  padding: 0.45rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+/* KPI cards grid */
+.super-admin-dashboard .row.g-3 {
+  margin-bottom: 1.5rem;
+}
+.super-admin-dashboard .card {
+  border-radius: 12px;
+  transition: transform .12s ease, box-shadow .12s ease;
+  overflow: hidden;
+}
+.super-admin-dashboard .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(2,6,23,.08);
+}
+
+/* KPI card visuals */
+.super-admin-dashboard .card .card-body {
+  padding: 1.25rem;
+}
+.super-admin-dashboard .display-6 {
+  font-size: 1.625rem;
+  line-height: 1;
+}
+.super-admin-dashboard .small {
+  font-size: 0.875rem;
+}
+
+/* Table container & styles */
+.super-admin-dashboard .table-responsive {
+  margin-top: 0.25rem;
+}
+.super-admin-dashboard table.table {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(2,6,23,.03);
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.super-admin-dashboard table.table thead tr th {
+  border-bottom: 0;
+  background: #f8fafc;
+  color: #334155;
+  font-weight: 600;
+  padding: 14px 18px;
+  font-size: 0.95rem;
+}
+.super-admin-dashboard table.table tbody tr td {
+  padding: 14px 18px;
+  vertical-align: middle;
+  border-top: 1px solid #eef2f7;
+  color: #0f172a;
+  font-size: 0.95rem;
+}
+.super-admin-dashboard table.table tbody tr.table-danger {
+  background: #fff7f7;
+}
+
+/* Avatar image */
+.super-admin-dashboard img.rounded-circle {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: inline-block;
+  margin-right: 12px;
+  border: 1px solid rgba(15,23,42,0.06);
+  background: #f8fafc;
+}
+
+/* Role badges */
+.super-admin-dashboard .badge.bg-primary,
+.super-admin-dashboard .badge.bg-secondary {
+  padding: 0.35rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* Row action buttons */
+.super-admin-dashboard .btn {
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  box-shadow: none;
+}
+.super-admin-dashboard .btn-sm {
+  padding: 6px 10px;
+}
+.super-admin-dashboard .btn-outline-danger,
+.super-admin-dashboard .btn-outline-success {
+  border-width: 1px;
+}
+.super-admin-dashboard .btn-danger {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+}
+.super-admin-dashboard .btn-outline-dark {
+  background: transparent;
+  border: 1px solid rgba(15,23,42,0.08);
+  color: #0f172a;
+}
+
+/* Community table specifics */
+.super-admin-dashboard .card-title {
+  font-weight: 700;
+}
+
+/* Dropdown styling */
+.super-admin-dashboard .dropdown .btn-secondary-action {
+  background: #f8fafc;
+  color: #111827;
+  border: 1px solid rgba(15,23,42,0.06);
+  padding: 8px 12px;
+  border-radius: 8px;
+}
+.super-admin-dashboard .dropdown-menu {
+  min-width: 210px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.06);
+  border: 1px solid rgba(2,6,23,0.06);
+}
+
+/* Empty / loading states */
+.super-admin-dashboard .text-center .spinner-border {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* Small utilities */
+.super-admin-dashboard .fw-bold {
+  font-weight: 700;
+}
+.super-admin-dashboard .text-muted {
+  color: #64748b !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 992px) {
+  .super-admin-dashboard {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .super-admin-dashboard .row.mb-5 .col-md-3 {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .super-admin-dashboard {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .super-admin-dashboard h2 {
+    font-size: 1.5rem;
+  }
+
+  .super-admin-dashboard .display-6 { 
+    font-size: 1.25rem; 
+  }
+
+  .super-admin-dashboard .card .card-body { 
+    padding: 1rem; 
+  }
+
+  .super-admin-dashboard table.table thead tr th,
+  .super-admin-dashboard table.table tbody tr td { 
+    padding: 10px 8px; 
+    font-size: 0.9rem; 
+  }
+
+  .super-admin-dashboard .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .super-admin-dashboard .nav-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .super-admin-dashboard .nav-tabs .nav-link {
+    white-space: nowrap;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .super-admin-dashboard h2 {
+    font-size: 1.3rem;
+  }
+
+  .super-admin-dashboard .d-flex.justify-content-between {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .super-admin-dashboard .card .card-body h3 {
+    font-size: 1.5rem;
+  }
+
+  .super-admin-dashboard table.table thead tr th,
+  .super-admin-dashboard table.table tbody tr td {
+    padding: 8px 6px;
+    font-size: 0.85rem;
+  }
+
+  .super-admin-dashboard .d-flex.align-items-center {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 0.5rem;
+  }
+
+  .super-admin-dashboard .btn-sm {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Accessibility focus outlines */
+.super-admin-dashboard .btn:focus,
+.super-admin-dashboard .table a:focus {
+  outline: 3px solid rgba(59,130,246,0.14);
+  outline-offset: 2px;
+}
+
+/* Fine grain: small icon alignment in KPI / header */
+.super-admin-dashboard h2 .bi {
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* Optional: subtle card color adjustments for consistency */
+.card.bg-primary { background: linear-gradient(180deg,#2563eb,#1e40af); }
+.card.bg-success { background: linear-gradient(180deg,#10b981,#059669); }
+.card.bg-info    { background: linear-gradient(180deg,#06b6d4,#0ea5b7); }
+.card.bg-warning { background: linear-gradient(180deg,#f59e0b,#d97706); color: #04202d; }
+
+/* End of file */
+
+/* --- FIX: Prevent tab text turning white on hover --- */
+.super-admin-dashboard .nav-tabs .nav-link {
+  color: #1f2937 !important; /* slate-700 */
+  font-weight: 500;
+  background: transparent !important;
+  border: none;
+}
+
+.super-admin-dashboard .nav-tabs .nav-link:hover {
+  color: #1e3a8a !important; /* brand-blue */
+  background: rgba(0,0,0,0.03) !important;
+  border: none;
+}
+
+.super-admin-dashboard .nav-tabs .nav-link.active {
+  color: #1e3a8a !important;
+  font-weight: 700;
+  background: #ffffff !important;
+  border-bottom: 2px solid #1e3a8a !important;
+}

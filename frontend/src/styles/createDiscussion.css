@@ -1,0 +1,245 @@
+/* createDiscussion.css
+   Theme-aligned styles for CreateDiscussion
+   Matches Community theme: #0f172a, radial indigo glow, glass cards, indigo primary
+*/
+
+/* ---------- PAGE SURFACE ---------- */
+.create-discussion-container {
+  background-color: #0f172a !important;
+  /* Using rem for navbar height (80px = 5rem) */
+  min-height: calc(100vh - 5rem);
+  position: relative;
+  color: #e6eef8;
+}
+
+/* Indigo radial glow top (same as community) */
+.create-discussion-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: radial-gradient(circle at 50% 0, rgba(79,70,229,0.15), transparent 70%);
+  pointer-events: none;
+}
+
+/* Ensure container content sits above the glow */
+.create-discussion-container > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- CARD (primary surface) ---------- */
+/* Be explicit to override bootstrap .bg-white, .card, etc. */
+.create-discussion-container .create-discussion-card,
+.create-discussion-container .card,
+.create-discussion-container .card.shadow-sm {
+  background: rgba(30,41,59,0.5) !important;       /* glass surface */
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.6) !important;
+  color: #e6eef8 !important;
+  margin-top: 2rem;
+}
+
+/* Tight padding on card body */
+.create-discussion-container .create-discussion-card.p-4 {
+  padding: 1.25rem !important;
+}
+
+/* Headline */
+.create-discussion-container h2,
+.create-discussion-container .h2 {
+  color: #ffffff !important;
+  font-weight: 800;
+  margin: 0;
+}
+
+/* Primary accent (text-primary normally) — force to indigo if used */
+.create-discussion-container .text-primary,
+.create-discussion-container .h2.text-primary {
+  color: #c7d2fe !important;
+}
+
+/* ---------- BACK LINK (btn-link) ---------- */
+.create-discussion-container .btn.btn-link {
+  color: #94a3b8 !important;
+  padding: 0 !important;
+  text-decoration: none !important;
+}
+.create-discussion-container .btn.btn-link:hover {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+/* ---------- FORM CONTROLS (override bootstrap heavily) ---------- */
+/* Inputs/Textareas */
+.create-discussion-container .form-control,
+.create-discussion-container input.form-control,
+.create-discussion-container textarea.form-control {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  color: #e6eef8 !important;
+  border-radius: 8px !important;
+  padding: 0.6rem 0.75rem !important;
+  transition: box-shadow 0.14s ease, transform 0.08s ease !important;
+}
+
+/* Placeholder */
+.create-discussion-container .form-control::placeholder {
+  color: rgba(226,232,240,0.55) !important;
+  opacity: 1 !important;
+}
+
+/* Focus */
+.create-discussion-container .form-control:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 6px rgba(79,70,229,0.08) !important;
+  border-color: var(--primary-brand) !important;
+  background: rgba(255,255,255,0.06) !important;
+}
+
+/* Disabled/read-only clarity */
+.create-discussion-container .form-control[disabled],
+.create-discussion-container .form-control:disabled {
+  opacity: 0.7 !important;
+  cursor: not-allowed !important;
+}
+
+/* ---------- Validation states: is-invalid / is-valid ---------- */
+/* Invalid (error) */
+.create-discussion-container .form-control.is-invalid,
+.create-discussion-container .is-invalid.form-control {
+  background: rgba(250, 204, 204, 0.03) !important;
+  border-color: rgba(239,68,68,0.8) !important;
+  box-shadow: 0 0 0 4px rgba(239,68,68,0.06) !important;
+  color: #ffecee !important;
+}
+
+/* Invalid feedback text */
+.create-discussion-container .invalid-feedback {
+  display: block !important;
+  color: #fecaca !important;
+  font-size: 0.90rem;
+  margin-top: 0.4rem;
+}
+
+/* Valid state */
+.create-discussion-container .form-control.is-valid,
+.create-discussion-container .is-valid.form-control {
+  border-color: rgba(99,102,241,0.85) !important; /* subtle indigo */
+  box-shadow: 0 0 0 4px rgba(79,70,229,0.06) !important;
+}
+
+/* ---------- BUTTONS (primary + outline-secondary) ---------- */
+/* Primary: pill gradient to match primary-action used across app */
+.create-discussion-container .btn.btn-primary,
+.create-discussion-container .btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #ec4899) !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  padding: 0.45rem 1.25rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 10px 30px rgba(79,70,229,0.12) !important;
+  transition: transform 0.12s ease, filter 0.12s ease !important;
+}
+.create-discussion-container .btn.btn-primary:hover {
+  transform: translateY(-2px) !important;
+  filter: brightness(1.04) !important;
+}
+
+/* Outline secondary (Cancel) — subtle glass */
+.create-discussion-container .btn.btn-outline-secondary,
+.create-discussion-container .btn-outline-secondary {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  color: #cbd5e1 !important;
+  border-radius: 10px !important;
+  padding: 0.45rem 1rem !important;
+}
+.create-discussion-container .btn.btn-outline-secondary:hover {
+  background: rgba(255,255,255,0.12) !important;
+  color: #fff !important;
+}
+
+/* Disabled buttons */
+.create-discussion-container .btn[disabled],
+.create-discussion-container .btn:disabled {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+  transform: none !important;
+}
+
+/* ---------- SMALL / HELP TEXT ---------- */
+.create-discussion-container .form-label,
+.create-discussion-container .fw-bold {
+  color: #e6eef8 !important;
+}
+.create-discussion-container .text-danger {
+  color: #fb7185 !important;
+}
+
+/* ---------- CARD BORDER RADIUS & SHADOW POLISH ---------- */
+.create-discussion-container .create-discussion-card {
+  border-radius: 12px !important;
+  -webkit-backdrop-filter: blur(6px) !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+/* ---------- RESPONSIVE TWEAKS ---------- */
+@media (max-width: 576px) {
+  .create-discussion-container .create-discussion-card {
+    padding: 1rem !important;
+  }
+  .create-discussion-container textarea.form-control {
+    min-height: 10rem !important; /* 160px converted to rem */
+  }
+}
+
+/* ---------- FORCE OVERRIDES (last-resort for stubborn bootstrap utilities) ---------- */
+/* These only apply inside this page — they won't pollute global styles */
+.create-discussion-container .is-invalid,
+.create-discussion-container .is-valid,
+.create-discussion-container .form-control,
+.create-discussion-container .btn {
+  -webkit-text-fill-color: initial !important;
+}
+
+/* If Bootstrap still tries to color label/feedback, override it */
+.create-discussion-container .form-check-label,
+.create-discussion-container .invalid-feedback,
+.create-discussion-container .valid-feedback {
+  color: unset !important;
+}
+
+/* Final polish: readable small text and header weight */
+.create-discussion-container small,
+.create-discussion-container .small {
+  color: #9aa7bd !important;
+}
+
+.create-discussion-container .btn.btn-link {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+
+  /* New — subtle gray border */
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  border-radius: 8px !important;
+
+  /* Glass-like background */
+  background: rgba(255,255,255,0.04) !important;
+
+  padding: 0.45rem 0.9rem !important;
+  transition: all 0.15s ease !important;
+}
+
+/* Hover effect */
+.create-discussion-container .btn.btn-link:hover {
+  color: #ffffff !important;
+  background: rgba(255,255,255,0.12) !important;
+  border-color: rgba(255,255,255,0.25) !important;
+}

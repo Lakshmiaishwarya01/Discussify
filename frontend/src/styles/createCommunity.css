@@ -1,0 +1,314 @@
+/* =========================================
+   1. PAGE LAYOUT (Compact & Fixed)
+   ========================================= */
+.create-page {
+  background-color: #0f172a;
+  /* Calculate height to fit exactly below navbar without scroll */
+  /* Using rem for navbar height (80px = 5rem) */
+  
+  min-height: calc(100vh - 5rem);
+  width: 100%;
+  display: flex;
+  align-items: center; /* Vertically Center */
+  justify-content: center; /* Horizontally Center */
+  position: relative;
+  overflow: auto; /* Disable Page Scroll */
+  padding: 0;
+}
+
+/* Background Orbs (Kept subtle) */
+.create-orb-1 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle,
+    rgba(236, 72, 153, 0.15) 0%,
+    transparent 70%
+  );
+  top: -20%;
+  left: -10%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.create-orb-2 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(79, 70, 229, 0.1) 0%,
+    transparent 70%
+  );
+  bottom: -10%;
+  right: -10%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+/* =========================================
+   2. GLASS FORM CARD (Compact)
+   ========================================= */
+.glass-form-card {
+  width: 90%; /* Ensures gap on left/right on mobile */
+  max-width: 34.375rem; /* 550px converted to rem (550/16) */
+  background: rgba(30, 41, 59, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 2rem; /* Reduced padding */
+  backdrop-filter: blur(20px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  animation: floatUp 0.5s ease-out;
+  margin: 0 auto;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Top Accent Line */
+.glass-form-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #4f46e5, #ec4899);
+}
+
+.form-title {
+  color: #fff;
+  font-weight: 800;
+  margin-bottom: 0.2rem;
+  font-size: 1.5rem; /* Slightly smaller title */
+}
+
+.text-pink {
+  color: #ec4899;
+}
+
+/* =========================================
+   3. INPUT FIELDS (Compact)
+   ========================================= */
+.glass-label {
+  color: #cbd5e1;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.3rem; /* Tighter label spacing */
+  display: block;
+}
+
+.glass-input-wrapper {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  font-size: 1rem;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.glass-form-input {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  /* Reduced vertical padding */
+  /* Extra left padding so the icon never collides with placeholder/text */
+  padding: 0.6rem 2rem 0.6rem 3.3rem;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+/* Variant without leading icon (used for Name field) */
+.glass-form-input.no-icon {
+  padding: 0.6rem 1rem;
+}
+
+.glass-form-input:focus {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: #818cf8;
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15);
+}
+
+.glass-form-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+/* Invalid State */
+.glass-form-input.is-invalid {
+  border-color: #ef4444;
+}
+
+/* =========================================
+   4. TOGGLE SWITCH (Compact Row)
+   ========================================= */
+.glass-toggle-container {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.custom-switch {
+  width: 2.5em !important;
+  height: 1.25em !important;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+.custom-switch:checked {
+  background-color: #ec4899;
+  border-color: #ec4899;
+}
+
+/* =========================================
+   5. BUTTONS
+   ========================================= */
+.btn-glow-primary {
+  background: linear-gradient(135deg, #4f46e5 0%, #db2777 100%);
+  color: white;
+  border: none;
+  padding: 0.7rem; /* Compact padding */
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+}
+
+.btn-glow-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(219, 39, 119, 0.5);
+  filter: brightness(1.1);
+  color: white;
+}
+
+.btn-glow-primary:disabled {
+  opacity: 0.6;
+  transform: none;
+  cursor: not-allowed;
+}
+
+.btn-glass-secondary {
+  background: transparent;
+  color: #cbd5e1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.7rem;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-glass-secondary:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border-color: #fff;
+}
+
+/* =========================================
+   6. RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 768px) {
+  .create-page {
+    height: auto;
+    min-height: calc(100vh - 5rem);
+    padding: 1rem;
+    overflow-y: auto;
+  }
+
+  .glass-form-card {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .form-title {
+    font-size: 1.3rem;
+  }
+
+  .glass-form-input {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem 0.6rem 3rem;
+  }
+
+  .glass-form-input.no-icon {
+    padding: 0.6rem 1rem;
+  }
+
+  .btn-glow-primary,
+  .btn-glass-secondary {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  .glass-toggle-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .glass-toggle-container .form-check {
+    align-self: flex-end;
+  }
+}
+
+@media (max-width: 576px) {
+  .create-page {
+    padding: 0.5rem;
+  }
+
+  .glass-form-card {
+    padding: 1.25rem;
+    border-radius: 16px;
+  }
+
+  .form-title {
+    font-size: 1.2rem;
+  }
+
+  .glass-label {
+    font-size: 0.8rem;
+  }
+
+  .glass-form-input {
+    padding: 0.55rem 0.9rem 0.55rem 2.8rem;
+    font-size: 0.85rem;
+  }
+
+  .glass-form-input.no-icon {
+    padding: 0.55rem 0.9rem;
+  }
+
+  .d-flex.gap-2 {
+    flex-direction: column;
+  }
+
+  .btn-glow-primary,
+  .btn-glass-secondary {
+    width: 100%;
+  }
+}

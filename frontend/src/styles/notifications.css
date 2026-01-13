@@ -1,0 +1,295 @@
+/* notifications.css — force-match to Community theme (dark navy, glass, indigo glow)
+   Replace existing file with this. Scoped and specific to prevent Bootstrap leakage.
+*/
+
+/* ---------- Scope helpers ---------- */
+/* Use .notifications-page on the outermost wrapper for strict scoping.
+   Fallback selects the structure used in the component too. */
+.notifications-page,
+.container.py-4 > .row > .col-lg-8 {
+  position: relative;
+  background-color: #0f172a !important;
+  min-height: calc(100vh - 80px);
+  padding-bottom: 3.5rem;
+  color: #e6eef8;
+}
+
+/* Top radial glow (same as Community) */
+.notifications-page::before,
+.container.py-4 > .row > .col-lg-8::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: radial-gradient(circle at 50% 0,
+              rgba(79,70,229,0.15),
+              transparent 70%) !important;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Put UI above the glow */
+.notifications-page > .container,
+.container.py-4 > .row > .col-lg-8 > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- Header + action buttons ---------- */
+.notifications-page h2,
+.container.py-4 h2 {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  margin: 0 0 0.5rem 0;
+}
+
+.notifications-page .badge.bg-danger,
+.container.py-4 .badge.bg-danger {
+  background: linear-gradient(90deg,#ef4444,#fb7185) !important;
+  color: #fff !important;
+  box-shadow: 0 6px 18px rgba(239,68,68,0.12) !important;
+}
+
+/* Header action buttons */
+.notifications-page .btn,
+.container.py-4 .btn {
+  -webkit-text-fill-color: initial !important;
+}
+
+/* Outline secondary/buttons in header — glass style */
+.notifications-page .btn.btn-outline-secondary,
+.container.py-4 .btn.btn-outline-secondary {
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  color: #cbd5e1 !important;
+  border-radius: 8px !important;
+  padding: 0.35rem 0.6rem !important;
+}
+.notifications-page .btn.btn-outline-secondary:hover,
+.container.py-4 .btn.btn-outline-secondary:hover {
+  background: rgba(255,255,255,0.12) !important;
+  color: #fff !important;
+}
+
+/* Outline primary (mark-all) */
+.notifications-page .btn.btn-outline-primary,
+.container.py-4 .btn.btn-outline-primary {
+  background: transparent !important;
+  border: 1px solid rgba(129,140,248,0.12) !important;
+  color: #c7d2fe !important;
+}
+
+/* ---------- Settings card (glass) ---------- */
+.notifications-page .card.bg-light,
+.container.py-4 .card.bg-light {
+  background: rgba(30,41,59,0.55) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  color: #e6eef8 !important;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.5) !important;
+}
+
+/* Switches */
+.notifications-page .form-check-input,
+.container.py-4 .form-check-input {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+.notifications-page .form-check-input:checked,
+.container.py-4 .form-check-input:checked {
+  background: var(--primary-brand) !important;
+  border-color: var(--primary-brand) !important;
+  box-shadow: 0 4px 14px rgba(79,70,229,0.12) !important;
+}
+
+/* Save button */
+.notifications-page .card .btn.btn-primary,
+.container.py-4 .card .btn.btn-primary {
+  background: linear-gradient(135deg,#4f46e5,#8b5cf6) !important;
+  border: none !important;
+  color: #fff !important;
+}
+
+/* ---------- List / Notification items (glass cards) ---------- */
+/* Neutral container */
+.notifications-page .list-group,
+.container.py-4 .list-group {
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Individual item: force glass card look */
+.notifications-page .list-group-item.d-flex,
+.container.py-4 .list-group-item.d-flex {
+  background: rgba(30,41,59,0.45) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  border-radius: 12px !important;
+  margin-bottom: 0.85rem !important;
+  padding: 1rem !important;
+  position: relative !important;
+  box-shadow: 0 10px 28px rgba(2,6,23,0.45) !important;
+  transition: transform 0.12s ease, background 0.12s ease !important;
+}
+
+/* Hover for clickable items */
+.notifications-page .list-group-item.d-flex:hover,
+.container.py-4 .list-group-item.d-flex:hover {
+  transform: translateY(-3px) !important;
+  background: rgba(30,41,59,0.60) !important;
+}
+
+/* Avatar */
+.notifications-page .list-group-item .rounded-circle,
+.container.py-4 .list-group-item .rounded-circle {
+  width: 44px !important;
+  height: 44px !important;
+  object-fit: cover !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* Sender name/time */
+.notifications-page .fw-bold,
+.container.py-4 .fw-bold {
+  color: #f8fafc !important;
+  font-size: 0.95rem !important;
+}
+.notifications-page small.text-muted,
+.container.py-4 small.text-muted {
+  color: #9aa7bd !important;
+}
+
+/* Message */
+.notifications-page p,
+.container.py-4 p {
+  color: #e6eef8 !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 0.95rem !important;
+}
+
+/* Community small meta */
+.notifications-page .list-group small.text-muted + small.text-muted,
+.container.py-4 .list-group small.text-muted + small.text-muted {
+  color: #9aa7bd !important;
+}
+
+/* ---------- Invite action buttons ---------- */
+/* Accept */
+.notifications-page .btn.btn-success,
+.container.py-4 .btn.btn-success {
+  background: linear-gradient(135deg,#10B981,#34D399) !important;
+  border: none !important;
+  color: #04261b !important;
+  border-radius: 8px !important;
+}
+
+/* Decline (outline danger) */
+.notifications-page .btn.btn-outline-danger,
+.container.py-4 .btn.btn-outline-danger {
+  background: transparent !important;
+  border: 1px solid rgba(239,68,68,0.14) !important;
+  color: #fecaca !important;
+}
+.notifications-page .btn.btn-outline-danger:hover,
+.container.py-4 .btn.btn-outline-danger:hover {
+  background: rgba(239,68,68,0.06) !important;
+  color: #fff !important;
+}
+
+/* Spinner small */
+.notifications-page .spinner-border.spinner-border-sm,
+.container.py-4 .spinner-border.spinner-border-sm {
+  width: 1rem !important;
+  height: 1rem !important;
+  border-width: 2px !important;
+}
+
+/* ---------- Unread dot ---------- */
+.notifications-page .list-group .position-absolute.top-50.end-0.translate-middle.p-1.bg-primary,
+.container.py-4 .list-group .position-absolute.top-50.end-0.translate-middle.p-1.bg-primary {
+  width: 12px !important;
+  height: 12px !important;
+  background: linear-gradient(90deg,#4f46e5,#8b5cf6) !important;
+  border: 2px solid rgba(255,255,255,0.10) !important;
+  box-shadow: 0 6px 18px rgba(79,70,229,0.12) !important;
+}
+
+/* Empty state readable */
+.notifications-page .text-center p.text-muted,
+.container.py-4 .text-center p.text-muted {
+  color: #94a3b8 !important;
+}
+
+/* Focus/keyboard accessibility */
+.notifications-page .list-group .list-group-item:focus,
+.container.py-4 .list-group .list-group-item:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 6px rgba(79,70,229,0.08) !important;
+  border-color: var(--primary-brand) !important;
+}
+
+/* Ensure no Bootstrap utility reduces contrast */
+.notifications-page .text-muted,
+.container.py-4 .text-muted {
+  color: unset !important;
+  color: #9aa7bd !important;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .notifications-page {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .notifications-page .col-lg-8 {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .notifications-page h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .notifications-page {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .notifications-page h2 {
+    font-size: 1.3rem;
+  }
+
+  .notifications-page .d-flex.justify-content-between {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .notifications-page .list-group-item.d-flex,
+  .container.py-4 .list-group-item.d-flex {
+    padding: 0.75rem !important;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .notifications-page .rounded-circle,
+  .container.py-4 .rounded-circle {
+    width: 36px !important;
+    height: 36px !important;
+    margin-bottom: 0.5rem;
+  }
+
+  .notifications-page .btn-sm {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+
+  .notifications-page .card {
+    padding: 1rem !important;
+  }
+}

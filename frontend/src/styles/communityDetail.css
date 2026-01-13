@@ -1,0 +1,369 @@
+/* =========================================
+   1. PAGE & LAYOUT STRUCTURE
+   ========================================= */
+.community-detail-container {
+  background-color: #0f172a;
+  min-height: 100vh;
+  /* Navbar offset */
+  padding-top: 0px; 
+  padding-bottom: 4rem;
+}
+
+/* Background gradient for ambience */
+.community-detail-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: radial-gradient(circle at 50% 0, rgba(79, 70, 229, 0.15), transparent 70%);
+  pointer-events: none;
+}
+
+/* =========================================
+   2. HEADER & BANNER
+   ========================================= */
+.community-glass-header {
+  background: rgba(30, 41, 59, 0.7); /* Dark Glass */
+  backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 3rem;
+  padding: 3rem 0;
+}
+
+.header-title {
+  color: #fff;
+  font-weight: 800;
+  font-size: 2.5rem;
+  background: linear-gradient(to right, #fff, #c7d2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.header-lead {
+  color: #94a3b8;
+  font-size: 1.1rem;
+}
+
+.header-stats span {
+  color: #64748b;
+  font-weight: 500;
+}
+
+.header-stats i {
+  color: #818cf8; /* Light Indigo Icon */
+}
+
+/* =========================================
+   3. ACTION BUTTONS & STATUS BADGES
+   ========================================= */
+.btn-primary-action {
+  background: linear-gradient(135deg, #4f46e5, #ec4899);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  font-weight: 700;
+  transition: all 0.2s;
+  box-shadow: 0 4px 15px rgba(219, 39, 119, 0.3);
+}
+
+.btn-primary-action:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.btn-secondary-action {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.75rem 1.75rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-secondary-action:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Status Badges */
+.status-badge-member {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80; /* Green */
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  font-weight: 700;
+}
+
+.status-badge-admin {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8; /* Cyan */
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  font-weight: 700;
+}
+
+.status-badge-mod {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc; /* Purple */
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  font-weight: 700;
+}
+
+/* =========================================
+   4. TABS (Custom Bootstrap Override)
+   ========================================= */
+.nav-tabs {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-tabs .nav-link {
+  color: #94a3b8; /* Muted text */
+  border: none;
+  border-radius: 0;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s;
+}
+
+.nav-tabs .nav-link:hover {
+  color: #fff;
+  border-color: transparent;
+}
+
+.nav-tabs .nav-link.active {
+  color: #38bdf8; /* Cyan Active */
+  background-color: transparent;
+  border-bottom: 2px solid #38bdf8;
+  border-color: transparent;
+  font-weight: 700;
+}
+
+/* =========================================
+   5. CONTENT CARDS (Discussions/Resources)
+   ========================================= */
+.discussion-glass-card {
+  background: rgba(30, 41, 59, 0.5); /* Dark Glass Card */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: transform 0.2s;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.discussion-glass-card:hover {
+  background: rgba(30, 41, 59, 0.8);
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.card-title-discussion {
+  color: #fff;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.card-title-discussion:hover {
+  color: #818cf8; /* Light Indigo hover */
+}
+
+.card-text-muted {
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+/* Resource Card Styling */
+.resource-glass-card {
+  background: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.resource-glass-card h5 {
+  color: #fff;
+  font-weight: 600;
+}
+
+.resource-icon-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.resource-icon-box i {
+  font-size: 2.2rem;
+}
+
+/* Privacy Lock Message */
+.private-lock-card {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(234, 179, 8, 0.3);
+  color: #fde047;
+  border-radius: 16px;
+  padding: 4rem 2rem;
+}
+
+/* Target the dropdown menu specifically within the header area */
+.community-glass-header .dropdown-menu {
+    /* Dark Glass Styling */
+    background: rgba(30, 41, 59, 0.95) !important; 
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    padding: 0.5rem;
+    z-index: 1050;
+}
+
+/* Style the individual links */
+.community-glass-header .dropdown-item {
+    color: #e2e8f0 !important; /* Light text for readability */
+    font-size: 0.95rem;
+    background: transparent;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+/* Hover Effect */
+.community-glass-header .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #fff !important;
+}
+
+/* Ensure the red Leave button remains visible */
+.community-glass-header .dropdown-item.text-danger {
+    color: #fca5a5 !important;
+}
+
+.community-glass-header .dropdown-item.text-danger:hover {
+    background: rgba(239, 68, 68, 0.2) !important;
+    color: #fff !important;
+}
+
+/* =========================================
+   6. RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 992px) {
+  .community-glass-header {
+    padding: 2rem 0;
+  }
+
+  .header-title {
+    font-size: 2rem;
+  }
+
+  .header-lead {
+    font-size: 1rem;
+  }
+
+  .header-stats {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .btn-primary-action,
+  .btn-secondary-action {
+    padding: 0.65rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .community-detail-container {
+    padding-top: 0;
+  }
+
+  .community-glass-header {
+    padding: 1.5rem 0;
+    margin-bottom: 2rem;
+  }
+
+  .header-title {
+    font-size: 1.75rem;
+  }
+
+  .header-lead {
+    font-size: 0.95rem;
+  }
+
+  .header-stats {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .header-stats span {
+    font-size: 0.9rem;
+  }
+
+  /* Stack action buttons on mobile */
+  .col-md-4.d-flex {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem !important;
+  }
+
+  .btn-primary-action,
+  .btn-secondary-action {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  /* Tabs adjust */
+  .nav-tabs .nav-link {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* Discussion cards */
+  .discussion-glass-card {
+    padding: 1rem !important;
+  }
+
+  .card-title-discussion {
+    font-size: 1.1rem;
+  }
+
+  /* Resource cards stack on mobile */
+  .col-lg-6 {
+    margin-bottom: 1rem;
+  }
+
+  .resource-glass-card {
+    padding: 1rem !important;
+  }
+
+  .private-lock-card {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .nav-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-tabs .nav-link {
+    white-space: nowrap;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .discussion-glass-card {
+    padding: 0.875rem !important;
+  }
+
+  .card-title-discussion {
+    font-size: 1rem;
+  }
+
+  .card-text-muted {
+    font-size: 0.85rem;
+  }
+}

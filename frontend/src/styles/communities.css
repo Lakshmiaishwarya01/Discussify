@@ -1,0 +1,429 @@
+/* =========================================
+   1. PAGE CONTAINER
+   ========================================= */
+.communities-page {
+  background-color: #0f172a;
+  min-height: 100vh;
+  /* FIX: Reduced top padding. App.js handles the first 80px (Navbar). */
+  padding-top: 20px; 
+  padding-bottom: 4rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Orbs */
+.comm-orb-1 {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, transparent 70%);
+  top: 0;
+  right: -100px;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.comm-orb-2 {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, transparent 70%);
+  bottom: 0;
+  left: -150px;
+  filter: blur(100px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-title {
+  color: #fff;
+  font-weight: 800;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.5); 
+}
+
+/* =========================================
+   2. TOOLBAR (Search & Filter)
+   ========================================= */
+.glass-toolbar {
+  background: rgba(30, 41, 59, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 5; 
+}
+
+.glass-search-wrapper {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.glass-search-input {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.glass-search-input:focus {
+  border-color: #818cf8;
+  background: rgba(15, 23, 42, 0.8);
+  box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.15);
+}
+
+.glass-select {
+  width: 100%;
+  background-color: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23ffffff%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 0.75rem auto;
+}
+
+/* =========================================
+   3. COMMUNITY CARDS
+   ========================================= */
+.community-card-glass {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.community-card-glass:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+  border-color: rgba(129, 140, 248, 0.3);
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.community-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.community-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Badges */
+.status-badge {
+  font-size: 0.7rem;
+  padding: 0.4em 0.8em;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.badge-private {
+  background: rgba(234, 179, 8, 0.15);
+  color: #fde047;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.badge-public {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+/* Card Content */
+.card-title {
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.card-title:hover {
+  color: #818cf8 !important;
+}
+
+.card-desc {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  min-height: 45px;
+}
+
+/* --- BUTTONS --- */
+.d-flex.gap-2 {
+  position: relative;
+  z-index: 10;
+}
+
+/* Primary Action Button (Join/Create) */
+.btn-glass-primary {
+  background: linear-gradient(135deg, #4f46e5, #db2777);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-glass-primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(219, 39, 119, 0.3);
+}
+
+.btn-glass-outline {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.btn-glass-outline:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+}
+
+.btn-create-glass {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.7rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.2s;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.btn-create-glass:hover {
+  background: rgba(79, 70, 229, 0.2);
+  border-color: #818cf8;
+}
+
+/* =========================================
+   STATUS BUTTON VARIANTS (New)
+   ========================================= */
+.btn-status {
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  border: 1px solid transparent;
+  cursor: default; /* Not clickable */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+}
+
+.btn-status-creator {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8; /* Cyan */
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+.btn-status-mod {
+  background: rgba(192, 132, 252, 0.15);
+  color: #d8b4fe; /* Purple */
+  border-color: rgba(192, 132, 252, 0.3);
+}
+
+.btn-status-joined {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80; /* Green */
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+.btn-status-pending {
+  background: rgba(148, 163, 184, 0.15);
+  color: #cbd5e1; /* Gray */
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+/* Empty State */
+.empty-state-glass {
+  background: rgba(30, 41, 59, 0.3);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+/* Utilities */
+.text-truncate-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* =========================================
+   4. RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 992px) {
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .glass-toolbar {
+    padding: 1.25rem;
+  }
+
+  .community-card-glass {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .communities-page {
+    padding-top: 15px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .page-title {
+    font-size: 1.75rem;
+  }
+
+  .glass-toolbar {
+    padding: 1rem;
+  }
+
+  .glass-search-input,
+  .glass-select {
+    font-size: 0.9rem;
+    padding: 0.7rem 0.9rem 0.7rem 2.3rem;
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+  }
+
+  .card-desc {
+    font-size: 0.9rem;
+    min-height: 40px;
+  }
+
+  .btn-glass-primary,
+  .btn-glass-outline {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-status {
+    min-width: 80px;
+    padding: 0.55rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  /* Stack filter and search on mobile */
+  .glass-toolbar .row {
+    flex-direction: column;
+  }
+
+  .glass-toolbar .col-md-8,
+  .glass-toolbar .col-md-4 {
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .communities-page {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
+  .btn-create-glass {
+    width: 100%;
+    padding: 0.65rem;
+    font-size: 0.9rem;
+  }
+
+  .glass-toolbar {
+    padding: 0.875rem;
+  }
+
+  .community-card-glass .card-body {
+    padding: 1.25rem !important;
+  }
+
+  .community-icon-box {
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-desc {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+
+  .d-flex.gap-2 {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-glass-primary,
+  .btn-glass-outline,
+  .btn-status {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+
+  .empty-state-glass {
+    padding: 2rem 1rem;
+  }
+}
+

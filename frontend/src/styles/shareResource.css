@@ -1,0 +1,216 @@
+/* shareResource.css
+   Theme: match Community pages (dark navy #0f172a), glass cards, indigo accents
+   Scoped overrides to prevent Bootstrap leakage
+*/
+
+/* ---------- PAGE SURFACE ---------- */
+.share-resource-container {
+  background-color: #0f172a !important;
+  min-height: 100vh;
+  position: relative;
+  color: #e6eef8;
+  padding-bottom: 4rem;
+}
+
+/* Indigo radial glow (same as community) */
+.share-resource-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: radial-gradient(circle at 50% 0, rgba(79,70,229,0.15), transparent 70%);
+  pointer-events: none;
+}
+
+/* container sits above glow */
+.share-resource-container > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- CARD SURFACE ---------- */
+/* Force-card look to override any .bg-white on server or bootstrap */
+.share-resource-container .share-resource-card,
+.share-resource-container .card,
+.share-resource-container .card.shadow-sm {
+  background: rgba(30,41,59,0.5) !important; /* glass */
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.6) !important;
+  color: #e6eef8 !important;
+  margin-top: 2rem;
+}
+
+/* tighten padding */
+.share-resource-container .share-resource-card.p-4 {
+  padding: 1.25rem !important;
+}
+
+/* headline */
+.share-resource-container h2,
+.share-resource-container .h2 {
+  color: #ffffff !important;
+  font-weight: 800;
+}
+
+/* force text-primary usage to be indigo-ish */
+.share-resource-container .text-primary,
+.share-resource-container .h2.text-primary {
+  color: #c7d2fe !important;
+}
+
+/* ---------- BACK BUTTON: bordered glass link (matches other pages) ---------- */
+.share-resource-container .btn.btn-link,
+.share-resource-container .btn.btn-link.text-decoration-none {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+
+  /* New — subtle gray border + glass background */
+  border: 1px solid rgba(255,255,255,0.18) !important;
+  border-radius: 8px !important;
+  background: rgba(255,255,255,0.04) !important;
+
+  padding: 0.45rem 0.9rem !important;
+  transition: all 0.15s ease !important;
+}
+
+.share-resource-container .btn.btn-link:hover {
+  color: #ffffff !important;
+  background: rgba(255,255,255,0.12) !important;
+  border-color: rgba(255,255,255,0.25) !important;
+}
+
+/* ---------- FORM CONTROLS (override bootstrap) ---------- */
+.share-resource-container .form-control,
+.share-resource-container input.form-control,
+.share-resource-container textarea.form-control {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  color: #e6eef8 !important;
+  border-radius: 8px !important;
+  padding: 0.6rem 0.75rem !important;
+}
+
+/* placeholder visibility */
+.share-resource-container .form-control::placeholder {
+  color: rgba(226,232,240,0.55) !important;
+  opacity: 1 !important;
+}
+
+/* focus */
+.share-resource-container .form-control:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 6px rgba(79,70,229,0.08) !important;
+  border-color: var(--primary-brand) !important;
+  background: rgba(255,255,255,0.06) !important;
+}
+
+/* small helper text */
+.share-resource-container .form-text {
+  color: #9aa7bd !important;
+}
+
+/* ---------- FILE INPUT POLISH ---------- */
+/* Show file input as glass box with subtle icon area */
+.share-resource-container input[type="file"].form-control {
+  padding: 0.5rem 0.6rem !important;
+  background: rgba(255,255,255,0.03) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+
+/* If browser renders file selector button, make it fit theme */
+.share-resource-container input[type="file"]::-webkit-file-upload-button {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  color: #e6eef8 !important;
+  padding: 0.35rem 0.6rem !important;
+  border-radius: 6px !important;
+  cursor: pointer;
+}
+
+/* help text color */
+.share-resource-container .form-text {
+  margin-top: 0.35rem;
+  color: rgba(226,232,240,0.65) !important;
+}
+
+/* ---------- BUTTONS: primary & cancel ---------- */
+/* Primary: pill gradient match primary-action */
+.share-resource-container .btn.btn-primary,
+.share-resource-container .btn-primary {
+  background: linear-gradient(135deg, #4f46e5, #ec4899) !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  padding: 0.45rem 1.25rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 10px 30px rgba(79,70,229,0.12) !important;
+}
+
+/* Cancel — outline secondary glass */
+.share-resource-container .btn.btn-outline-secondary,
+.share-resource-container .btn-outline-secondary {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.12) !important;
+  color: #cbd5e1 !important;
+  border-radius: 10px !important;
+  padding: 0.45rem 1rem !important;
+}
+
+/* hover states */
+.share-resource-container .btn.btn-primary:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.04);
+}
+.share-resource-container .btn.btn-outline-secondary:hover {
+  background: rgba(255,255,255,0.12) !important;
+  color: #fff !important;
+}
+
+/* disabled */
+.share-resource-container .btn[disabled] {
+  opacity: 0.6 !important;
+  cursor: not-allowed !important;
+}
+
+/* ---------- LABELS & SMALL TEXT ---------- */
+.share-resource-container .form-label,
+.share-resource-container .fw-bold {
+  color: #e6eef8 !important;
+}
+.share-resource-container .text-danger {
+  color: #fb7185 !important;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 576px) {
+  .share-resource-container .share-resource-card {
+    padding: 1rem !important;
+  }
+  .share-resource-container input[type="file"].form-control {
+    padding: 0.6rem 0.6rem !important;
+  }
+}
+
+/* ---------- LAST-RESORT OVERRIDES (scoped) ---------- */
+.share-resource-container .form-control,
+.share-resource-container .btn,
+.share-resource-container .text-muted {
+  -webkit-text-fill-color: initial !important;
+}
+
+/* ensure helper and feedback text readable */
+.share-resource-container .valid-feedback,
+.share-resource-container .invalid-feedback {
+  color: unset !important;
+}
+
+/* final polish small text */
+.share-resource-container small,
+.share-resource-container .small {
+  color: #9aa7bd !important;
+}

@@ -1,0 +1,162 @@
+/* =========================================
+   1. PAGE WRAPPER & TYPOGRAPHY
+   ========================================= */
+.search-results-page-dark {
+    /* Base dark background */
+    background-color: #0f172a; 
+    min-height: 100vh;
+    padding-top: 20px;
+    padding-bottom: 4rem;
+}
+
+.page-title-dark {
+    color: #fff; 
+    font-weight: 800;
+}
+
+/* =========================================
+   2. CUSTOM DARK CARD (Visual Definition & Contrast Fixes)
+   ========================================= */
+.community-result-card {
+    /* Background: Slightly darker surface for better definition */
+    background-color: #1a2434; 
+    
+    /* Border: Ensure border is slightly clearer */
+    border: 1px solid rgba(255, 255, 255, 0.2); 
+    
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Stronger shadow for depth */
+    
+    transition: all 0.25s ease;
+    color: var(--text-on-dark); /* Default text is light */
+}
+
+.community-result-card:hover {
+    /* Enhanced hover effect for interaction feedback and visual lift */
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
+    transform: translateY(-4px); 
+    border-color: var(--primary-brand); 
+}
+
+/* Ensure title color stands out */
+.card-title {
+    color: var(--primary-brand) !important; 
+    font-weight: 700;
+}
+
+/* FIX: Description Text - Use !important to override Bootstrap's .text-muted */
+.card-desc-dark {
+    /* Bright light gray/off-white for main text readability */
+    color: #E2E8F0 !important; 
+    font-size: 0.95rem; 
+}
+
+/* FIX: Secondary Info Text - Use !important to override Bootstrap's .text-secondary */
+.text-info-dark {
+    color: #94A3B8 !important; 
+}
+
+
+/* =========================================
+   3. CUSTOM STATUS BADGES 
+   ========================================= */
+.status-badge-dark {
+    font-size: 0.7rem;
+    padding: 0.3em 0.7em;
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badge-private-dark {
+    background: rgba(234, 179, 8, 0.2); 
+    color: #fde047;
+}
+
+.badge-public-dark {
+    background: rgba(34, 197, 94, 0.2); 
+    color: #4ade80;
+}
+
+/* =========================================
+   4. EMPTY STATE
+   ========================================= */
+.empty-state-dark {
+    background: var(--bg-surface); 
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    box-shadow: var(--shadow-card);
+}
+.empty-state-dark h4, .empty-state-dark p, .empty-state-dark i {
+    color: var(--text-main) !important; 
+}
+
+/* =========================================
+   5. RESPONSIVE DESIGN
+   ========================================= */
+@media (max-width: 768px) {
+  .search-results-page-dark {
+    padding-top: 15px;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .page-title-dark {
+    font-size: 1.5rem;
+  }
+
+  .community-result-card {
+    margin-bottom: 1rem;
+  }
+
+  .community-result-card .card-body {
+    padding: 1rem !important;
+  }
+
+  .card-title {
+    font-size: 1.1rem;
+  }
+
+  .card-desc-dark {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-results-page-dark {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .page-title-dark {
+    font-size: 1.3rem;
+  }
+
+  .community-result-card .card-body {
+    padding: 0.875rem !important;
+    flex-direction: column;
+  }
+
+  .community-result-card .d-flex.align-items-start {
+    flex-direction: column;
+    align-items: flex-start !important;
+  }
+
+  .community-result-card .me-3 {
+    margin-right: 0 !important;
+    margin-bottom: 0.75rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-desc-dark {
+    font-size: 0.85rem;
+  }
+
+  .status-badge-dark {
+    font-size: 0.65rem;
+    padding: 0.25em 0.6em;
+  }
+}

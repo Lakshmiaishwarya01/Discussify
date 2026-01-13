@@ -1,0 +1,108 @@
+Fri Nov 28 2025 22:13:56 GMT+0530 (India Standard Time) - POST - /api/v1/users/login
+Error: User not found
+    at exports.login (D:\reddit\backend\controllers\authController.js:51:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Fri Nov 28 2025 23:09:09 GMT+0530 (India Standard Time) - GET - /api/v1/communities/6928a32c9bcd6c0ef13666d0/discussions
+Error: This community is private. Please login to view.
+    at exports.getAllDiscussions (D:\reddit\backend\controllers\discussionController.js:81:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Fri Nov 28 2025 23:09:09 GMT+0530 (India Standard Time) - GET - /api/v1/communities/6928a32c9bcd6c0ef13666d0/discussions
+Error: This community is private. Please login to view.
+    at exports.getAllDiscussions (D:\reddit\backend\controllers\discussionController.js:81:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Fri Nov 28 2025 23:51:13 GMT+0530 (India Standard Time) - PATCH - /api/v1/communities/6929e811b4b48d469bc95db8
+Error: ENOENT: no such file or directory, open 'D:\reddit\backend\public\img\communities\community-1764354073810-295416037.png'
+Fri Nov 28 2025 23:55:45 GMT+0530 (India Standard Time) - GET - /api/v1/communities/6928a32c9bcd6c0ef13666d0/discussions
+Error: This community is private. You must join to view.
+    at exports.getAllDiscussions (D:\reddit\backend\controllers\discussionController.js:92:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Fri Nov 28 2025 23:55:45 GMT+0530 (India Standard Time) - GET - /api/v1/communities/6928a32c9bcd6c0ef13666d0/discussions
+Error: This community is private. You must join to view.
+    at exports.getAllDiscussions (D:\reddit\backend\controllers\discussionController.js:92:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 00:22:42 GMT+0530 (India Standard Time) - POST - /api/v1/users/login
+Error: User not found
+    at exports.login (D:\reddit\backend\controllers\authController.js:51:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 00:24:05 GMT+0530 (India Standard Time) - POST - /api/v1/communities/6929ebf8b4b48d469bc95fbf/invite
+Error: User already invited
+    at exports.inviteUser (D:\reddit\backend\controllers\communityController.js:308:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 08:59:48 GMT+0530 (India Standard Time) - POST - /api/v1/users/signup
+MongoServerError: E11000 duplicate key error collection: Discussify.Users index: username_1 dup key: { username: "gauthamcsudheer" }
+    at InsertOneOperation.handleOk (D:\reddit\backend\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at tryOperation (D:\reddit\backend\node_modules\mongodb\lib\operations\execute_operation.js:214:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async executeOperation (D:\reddit\backend\node_modules\mongodb\lib\operations\execute_operation.js:78:16)
+    at async Collection.insertOne (D:\reddit\backend\node_modules\mongodb\lib\collection.js:154:16)
+Sat Nov 29 2025 08:59:56 GMT+0530 (India Standard Time) - POST - /api/v1/users/signup
+MongoServerError: E11000 duplicate key error collection: Discussify.Users index: email_1 dup key: { email: "gautham@example.com" }
+    at InsertOneOperation.handleOk (D:\reddit\backend\node_modules\mongodb\lib\operations\insert.js:51:19)
+    at tryOperation (D:\reddit\backend\node_modules\mongodb\lib\operations\execute_operation.js:214:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async executeOperation (D:\reddit\backend\node_modules\mongodb\lib\operations\execute_operation.js:78:16)
+    at async Collection.insertOne (D:\reddit\backend\node_modules\mongodb\lib\collection.js:154:16)
+Sat Nov 29 2025 09:06:32 GMT+0530 (India Standard Time) - POST - /api/v1/users/forgotPassword
+Error: There is no user with that email address.
+    at exports.forgotPassword (D:\reddit\backend\controllers\authController.js:75:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 09:21:01 GMT+0530 (India Standard Time) - GET - /api/v1/communities/692a695cf0dbf70dbd643c0f/discussions
+Error: This community is private. You must join to view.
+    at exports.getAllDiscussions (D:\reddit\backend\controllers\discussionController.js:92:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 09:21:01 GMT+0530 (India Standard Time) - GET - /api/v1/communities/692a695cf0dbf70dbd643c0f/discussions
+Error: This community is private. You must join to view.
+    at exports.getAllDiscussions (D:\reddit\backend\controllers\discussionController.js:92:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 10:34:45 GMT+0530 (India Standard Time) - GET - /api/v1/communities/692a695cf0dbf70dbd643c0f/discussions
+Error: This community is private. Please login to view.
+    at exports.getAllDiscussions (D:\reddit\backend\controllers\discussionController.js:81:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 10:38:37 GMT+0530 (India Standard Time) - POST - /api/v1/users/login
+Error: User not found
+    at exports.login (D:\reddit\backend\controllers\authController.js:51:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 10:38:42 GMT+0530 (India Standard Time) - POST - /api/v1/users/login
+Error: User not found
+    at exports.login (D:\reddit\backend\controllers\authController.js:51:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 10:41:23 GMT+0530 (India Standard Time) - DELETE - /api/v1/communities/692a8068f0dbf70dbd64487b
+Error: Cannot delete community. There are 1 active discussions. Please delete them first.
+    at exports.deleteCommunity (D:\reddit\backend\controllers\communityController.js:103:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 10:42:02 GMT+0530 (India Standard Time) - GET - /api/v1/communities/692a8068f0dbf70dbd64487b
+Error: No community found
+    at exports.getCommunity (D:\reddit\backend\controllers\communityController.js:51:23)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 11:42:40 GMT+0530 (India Standard Time) - POST - /api/v1/communities/692a8dc2f0dbf70dbd644963/resources
+ValidationError: Resources validation failed: description: Description cannot exceed 500 characters
+    at Document.invalidate (D:\reddit\backend\node_modules\mongoose\lib\document.js:3362:32)
+    at D:\reddit\backend\node_modules\mongoose\lib\document.js:3123:17
+    at D:\reddit\backend\node_modules\mongoose\lib\schemaType.js:1446:9
+    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)
+Sat Nov 29 2025 11:56:15 GMT+0530 (India Standard Time) - GET - /api/v1/discussions/692a7912f0dbf70dbd644242
+TypeError: Cannot read properties of null (reading 'isPrivate')
+    at exports.getDiscussion (D:\reddit\backend\controllers\discussionController.js:124:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 11:56:31 GMT+0530 (India Standard Time) - GET - /api/v1/discussions/692a7912f0dbf70dbd644242
+TypeError: Cannot read properties of null (reading 'isPrivate')
+    at exports.getDiscussion (D:\reddit\backend\controllers\discussionController.js:124:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 12:18:49 GMT+0530 (India Standard Time) - POST - /api/v1/users/login
+Error: Invalid credentials
+    at exports.login (C:\Users\hp\Desktop\Discussify-latest\Discussify\backend\controllers\authController.js:56:23)
+Sat Nov 29 2025 12:36:33 GMT+0530 (India Standard Time) - POST - /api/v1/users/login
+Error: Invalid credentials
+    at exports.login (C:\Users\hp\Desktop\Discussify-latest\Discussify\backend\controllers\authController.js:56:23)
+Sat Nov 29 2025 17:24:01 GMT+0530 (India Standard Time) - GET - /api/v1/communities/692a9467b5fb8ed11333312d/discussions
+Error: This community is private. Please login to view.
+    at exports.getAllDiscussions (C:\Users\hp\Desktop\Discussify-latest\Discussify\backend\controllers\discussionController.js:81:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 22:02:23 GMT+0530 (India Standard Time) - GET - /api/v1/communities/692a9467b5fb8ed11333312d/discussions
+Error: This community is private. Please login to view.
+    at exports.getAllDiscussions (C:\Users\hp\Desktop\Discussify-latest\Discussify\backend\controllers\discussionController.js:81:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+Sat Nov 29 2025 22:02:29 GMT+0530 (India Standard Time) - GET - /api/v1/communities/692a9467b5fb8ed11333312d/discussions
+Error: This community is private. Please login to view.
+    at exports.getAllDiscussions (C:\Users\hp\Desktop\Discussify-latest\Discussify\backend\controllers\discussionController.js:81:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

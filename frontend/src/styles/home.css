@@ -1,0 +1,332 @@
+.landing-page h1, 
+.landing-page h2, 
+.landing-page h3, 
+.landing-page h4, 
+.landing-page h5, 
+.landing-page h6 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+
+.cta-glass-panel h2 {
+  background: linear-gradient(to right, #fff, #e0e7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-glass-panel p {
+  color: #cbd5e1 !important; /* Light Grey */
+}
+
+
+/* =========================================
+   1. LANDING PAGE CONTAINER (Dark Void)
+   ========================================= */
+.landing-page {
+  background-color: #0f172a; 
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  color: #fff;
+  padding-top: 80px; /* Offset for fixed navbar */
+}
+
+/* Background Ambient Orbs */
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.orb-primary {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #4f46e5 0%, transparent 70%);
+  top: -150px;
+  left: -100px;
+  animation: float 10s infinite ease-in-out;
+}
+
+.orb-secondary {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #ec4899 0%, transparent 70%);
+  bottom: 10%;
+  right: -100px;
+  animation: float 14s infinite ease-in-out reverse;
+}
+
+@keyframes float {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(30px, 50px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* =========================================
+   2. HERO SECTION
+   ========================================= */
+.hero-section {
+  position: relative;
+  z-index: 1;
+  padding: 6rem 0 4rem 0;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  color: #a5b4fc;
+  margin-bottom: 1.5rem;
+  backdrop-filter: blur(5px);
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #fff, #c7d2fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text {
+  font-size: 1.25rem;
+  color: #94a3b8; 
+  max-width: 600px;
+  margin: 0 auto 2.5rem auto;
+}
+
+.btn-glow-primary {
+  background: linear-gradient(135deg, #4f46e5 0%, #db2777 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+  transition: transform 0.2s;
+}
+
+.btn-glow-primary:hover {
+  transform: translateY(-2px);
+  color: white;
+  box-shadow: 0 6px 25px rgba(219, 39, 119, 0.5);
+}
+
+.btn-glass-secondary {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.2s;
+}
+
+.btn-glass-secondary:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #fff;
+  color: #fff;
+}
+
+/* =========================================
+   3. VALUE PROPOSITION (Replaces Stats)
+   ========================================= */
+.features-container {
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+}
+
+.feature-glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 2.5rem 2rem;
+  text-align: left; /* Professional alignment */
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-color 0.3s;
+  height: 100%;
+}
+
+.feature-glass-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.feature-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  /* Dynamic gradient backgrounds handled in JSX or specific classes */
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.feature-desc {
+  color: #94a3b8; /* Slate */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =========================================
+   4. FEATURED COMMUNITIES
+   ========================================= */
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.community-card-glass {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.community-card-glass:hover {
+  transform: translateY(-8px);
+  border-color: #818cf8;
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Glow Effect on Hover */
+.community-card-glass::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: radial-gradient(circle at top right, rgba(129, 140, 248, 0.15), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.community-card-glass:hover::after { opacity: 1; }
+
+.card-content {
+  padding: 2rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-icon-box {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #fff;
+  overflow: hidden;
+}
+
+.card-icon-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-heading {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #fff;
+}
+
+.card-desc {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.btn-card-action {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: none;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-card-action:hover {
+  background: #4f46e5; /* Indigo */
+  color: white;
+}
+
+/* Empty state card in Trending section */
+.glass-card {
+  max-width: 420px;
+  margin: 0 auto;
+  border-radius: 24px;
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.8);
+}
+
+.glass-card i {
+  /* Make the inbox icon clearly visible on dark background */
+  color: #ffffff;
+  font-size: 3rem;
+}
+
+.glass-card p {
+  color: #cbd5e1 !important;
+  margin-bottom: 0.75rem;
+}
+
+/* =========================================
+   5. CTA SECTION
+   ========================================= */
+.cta-glass-panel {
+  background: linear-gradient(to right, rgba(79, 70, 229, 0.1), rgba(236, 72, 153, 0.1));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 30px;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .hero-title { font-size: 2.5rem; }
+  .stat-card { margin-bottom: 1rem; }
+  .d-flex.gap-3 { flex-direction: column; }
+  .btn-glow-primary, .btn-glass-secondary { width: 100%; }
+}

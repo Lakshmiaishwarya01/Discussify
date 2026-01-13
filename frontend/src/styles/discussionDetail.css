@@ -1,0 +1,358 @@
+/* discussionDetail.css — Bootstrap override edition
+   High-specificity selectors + minimal !important to force theme
+*/
+
+/* ---------- Root page surface ---------- */
+.discussion-detail-container {
+  background: #0f172a !important;;
+  color: var(--text-main) !important;
+  min-height: 100vh !important;
+  padding-bottom: 4rem !important;
+}
+
+/* ---------- Force-card treatment (override bootstrap .card) ---------- */
+/* Use very specific selector to beat bootstrap */
+.discussion-detail-container .card,
+.discussion-detail-container .card.shadow-sm,
+.discussion-detail-container .card.mb-4 {
+  background: rgba(20,26,34,0.96) !important;
+  border: 1px solid rgba(255,255,255,0.035) !important;
+  color: #e6eef8 !important;
+  box-shadow: var(--shadow-card) !important;
+}
+
+/* Force bg-light *inside* discussion page to our neutral surface */
+.discussion-detail-container .bg-light,
+.discussion-detail-container .card.bg-light,
+.discussion-detail-container .bg-light.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)) !important;
+  color: #e6eef8 !important;
+  border: 1px solid rgba(255,255,255,0.03) !important;
+}
+
+/* ---------- Typography overrides (Bootstrap .text-muted etc.) ---------- */
+.discussion-detail-container .text-muted,
+.discussion-detail-container p.text-muted,
+.discussion-detail-container small.text-muted,
+.discussion-detail-container .muted,
+.discussion-detail-container .card .text-muted {
+  color: #9aa7bd !important; /* readable muted tone */
+  opacity: 1 !important;     /* cancel bootstrap opacity */
+}
+
+/* Ensure normal text isn't dimmed by any bootstrap utility */
+.discussion-detail-container,
+.discussion-detail-container * {
+  -webkit-text-fill-color: initial !important;
+}
+
+/* ---------- Discussion header / content ---------- */
+.discussion-detail-container .card-body h2,
+.discussion-detail-container h2 {
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+.discussion-detail-container .card-text,
+.discussion-detail-container p,
+.discussion-detail-container .card .card-text {
+  color: rgba(230,238,248,0.97) !important;
+  line-height: 1.6 !important;
+  white-space: pre-wrap !important;
+}
+
+/* ---------- Buttons: force theme on bootstrap button classes ---------- */
+/* Primary post button (bootstrap .btn-primary) on this page */
+.discussion-detail-container .btn.btn-primary,
+.discussion-detail-container .card .btn.btn-primary,
+.discussion-detail-container .btn-primary {
+  background: linear-gradient(90deg, var(--primary-brand), #7c3aed) !important;
+  border: none !important;
+  color: #fff !important;
+  box-shadow: 0 8px 28px rgba(79,70,229,0.12) !important;
+  border-radius: 999px !important;
+  font-weight: 700 !important;
+}
+
+/* Outline-danger like button */
+.discussion-detail-container .btn.btn-outline-danger,
+.discussion-detail-container .btn-outline-danger {
+  border-color: rgba(239,68,68,0.12) !important;
+  color: rgba(239,68,68,0.95) !important;
+  background: transparent !important;
+}
+
+/* Danger solid */
+.discussion-detail-container .btn.btn-danger,
+.discussion-detail-container .btn-danger {
+  background: linear-gradient(90deg, var(--primary-brand), #ec4899) !important;
+  border: none !important;
+  color: #fff !important;
+  box-shadow: 0 6px 20px rgba(79,70,229,0.18) !important;
+}
+
+/* Outline secondary (back button) */
+.discussion-detail-container .btn.btn-outline-secondary,
+.discussion-detail-container .btn-outline-secondary {
+  color: #cbd5e1 !important;
+  border-color: rgba(255,255,255,0.06) !important;
+  background: rgba(255,255,255,0.02) !important;
+}
+
+/* btn-link override (reply links) */
+.discussion-detail-container .btn.btn-link,
+.discussion-detail-container .btn-link {
+  color: #94a3b8 !important;
+  text-decoration: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* ---------- Comment bubble & avatar (strong specificity) ---------- */
+.discussion-detail-container .comment-item,
+.discussion-detail-container .comment-item .bg-light,
+.discussion-detail-container .comment-item .comment-avatar {
+  /* avatar */
+  --avatar-border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Avatar */
+.discussion-detail-container .comment-item .comment-avatar {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 8px !important;
+  object-fit: cover !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  background: rgba(255,255,255,0.02) !important;
+}
+
+/* comment bubble - must beat bootstrap .bg-light */
+.discussion-detail-container .comment-item .bg-light {
+  position: relative !important;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)) !important;
+  border: 1px solid rgba(255,255,255,0.03) !important;
+  padding: 0.9rem !important;
+  border-radius: 10px !important;
+  color: #e6eef8 !important;
+  min-height: 54px !important;
+}
+
+/* Author and timestamp inside comment */
+.discussion-detail-container .comment-item .fw-bold {
+  color: #f8fafc !important;
+  font-size: 0.95rem !important;
+}
+.discussion-detail-container .comment-item .text-muted {
+  color: #94a3b8 !important;
+  font-size: 0.78rem !important;
+  opacity: 1 !important;
+}
+
+/* Comment text */
+.discussion-detail-container .comment-item p,
+.discussion-detail-container .comment-item .card-text {
+  color: rgba(230,238,248,0.97) !important;
+  margin-bottom: 0.5rem !important;
+  font-size: 0.95rem !important;
+  line-height: 1.45 !important;
+  word-break: break-word !important;
+}
+
+/* ---------- Comment like button — ensure it sits inside card ---------- */
+/* More specific selector to override bootstrap position & styling */
+.discussion-detail-container .comment-item .btn.position-absolute,
+.discussion-detail-container .comment-item .btn.position-absolute.mb-1 {
+  bottom: 10px !important;
+  right: 10px !important;
+  background: transparent !important;
+  color: rgba(255,255,255,0.68) !important;
+  padding: 0.25rem 0.6rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(255,255,255,0.02) !important;
+  font-size: 0.86rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  transform: none !important;
+}
+
+/* Hover + liked state */
+.discussion-detail-container .comment-item .btn.position-absolute:hover { transform: translateY(-2px) !important; color: #ff6b6b !important; }
+.discussion-detail-container .comment-item .btn.position-absolute.text-danger,
+.discussion-detail-container .comment-item .text-danger {
+  color: #fb7185 !important;
+  border-color: rgba(251,113,133,0.06) !important;
+}
+
+/* ---------- Comment action area (Reply) alignment override ---------- */
+.discussion-detail-container .comment-item .comment-actions {
+  margin-top: 0.5rem !important;
+  margin-left: 56px !important; /* align under bubble and not under avatar */
+}
+
+/* btn-link inside comment-actions */
+.discussion-detail-container .comment-item .comment-actions .btn.btn-link {
+  color: #94a3b8 !important;
+}
+
+/* ---------- Nested comments (tree) ---------- */
+/* Strong selector to force layout and left border */
+.discussion-detail-container .comment-item > .nested-comments,
+.discussion-detail-container .nested-comments {
+  margin-left: 3rem !important;
+  margin-top: 0.75rem !important;
+  border-left: 1px dashed rgba(255,255,255,0.3) !important;
+  padding-left: 1rem !important;
+}
+
+/* ---------- Reply form styling (overriding bootstrap form-control) ---------- */
+/* High specificity to beat .form-control */
+.discussion-detail-container .comment-item textarea.form-control,
+.discussion-detail-container .card .form-control,
+.discussion-detail-container .form-control {
+  background: rgba(255,255,255,0.02) !important;
+  border: 1px solid rgba(255,255,255,0.04) !important;
+  color: #e6eef8 !important;
+  resize: vertical !important;
+}
+
+/* placeholder visibility */
+.discussion-detail-container .comment-item textarea::placeholder,
+.discussion-detail-container .card .form-control::placeholder,
+.discussion-detail-container .form-control::placeholder {
+  color: rgba(230,238,248,0.50) !important;
+  opacity: 1 !important;
+}
+
+/* Focus overrides */
+.discussion-detail-container .form-control:focus,
+.discussion-detail-container textarea.form-control:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 4px rgba(79,70,229,0.12) !important;
+  border-color: var(--primary-brand) !important;
+  background: rgba(255,255,255,0.03) !important;
+}
+
+/* ---------- Top-level comment card submit button (force pill) ---------- */
+.discussion-detail-container .card .btn-primary,
+.discussion-detail-container .card .btn-primary:active,
+.discussion-detail-container .card .btn-primary:focus {
+  background: linear-gradient(90deg, var(--primary-brand), #7c3aed) !important;
+  border: none !important;
+  font-weight: 700 !important;
+  border-radius: 999px !important;
+  box-shadow: 0 8px 28px rgba(79,70,229,0.12) !important;
+  padding: 0.45rem 1rem !important;
+}
+
+/* Disabled clarity */
+.discussion-detail-container .card .btn[disabled] {
+  opacity: 0.6 !important;
+  transform: none !important;
+}
+
+/* ---------- Empty states & misc ---------- */
+.discussion-detail-container .text-center p.text-muted {
+  color: #8b98ac !important;
+}
+
+/* dropdown-menu override for page */
+.discussion-detail-container .dropdown-menu,
+.discussion-detail-container .card .dropdown-menu {
+  background: rgba(6,7,23,0.98) !important;
+  border: 1px solid rgba(255,255,255,0.03) !important;
+  color: #e6eef8 !important;
+}
+
+/* Make small text readable */
+.discussion-detail-container .small { color: #9aa7bd !important; }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .discussion-detail-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .discussion-detail-container .card {
+    padding: 1.25rem !important;
+  }
+
+  .discussion-detail-container .card h2 {
+    font-size: 1.5rem;
+  }
+
+  .discussion-detail-container .col-lg {
+    padding: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .discussion-detail-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .discussion-detail-container .card {
+    padding: 1rem !important;
+  }
+
+  .discussion-detail-container .card h2 {
+    font-size: 1.3rem;
+  }
+
+  .discussion-detail-container .nested-comments { 
+    margin-left: 1.5rem !important; 
+    padding-left: 0.5rem !important; 
+  }
+
+  .discussion-detail-container .comment-item .comment-actions { 
+    margin-left: 48px !important; 
+  }
+
+  .discussion-detail-container .comment-avatar {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .discussion-detail-container .btn-sm {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* Final safety: ensure no Bootstrap utility leaves low contrast in this page */
+.discussion-detail-container .text-muted,
+.discussion-detail-container .muted,
+.discussion-detail-container .lead,
+.discussion-detail-container .small,
+.discussion-detail-container span,
+.discussion-detail-container p {
+  color: unset !important;
+}
+
+/* Re-apply our preferred muted color at the end (most specific) */
+.discussion-detail-container .text-muted,
+.discussion-detail-container p.text-muted,
+.discussion-detail-container small.text-muted {
+  color: #9aa7bd !important;
+  opacity: 1 !important;
+}
+
+.discussion-detail-container .btn.btn-outline-secondary {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  color: #94a3b8 !important;
+  border-radius: 8px !important;
+  padding: 0.45rem 0.9rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+  transition: all 0.15s ease !important;
+}
+
+.discussion-detail-container .btn.btn-outline-secondary:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.25) !important;
+  color: #ffffff !important;
+}

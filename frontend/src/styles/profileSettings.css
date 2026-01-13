@@ -1,0 +1,341 @@
+/* profileSettings.css
+   Theme-matched styles for ProfileSettings
+   - Scoped to .profile-settings-container
+   - Matches Community theme: dark navy (#0f172a), glass panels, indigo accents
+   - Overrides Bootstrap where necessary so markup in JSX remains unchanged
+*/
+
+/* ---------- Page surface & glow ---------- */
+.profile-settings-container {
+  background-color: #0f172a !important;
+  min-height: 100vh;
+  color: #cbd5e1;
+  position: relative;
+  padding-bottom: 4rem;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+}
+
+.profile-settings-container > .container,
+.profile-settings-container > .container .row {
+  position: relative;
+  z-index: 2;
+}
+
+/* ---------- Helpers: apply glass panel look ---------- */
+.profile-settings-container .panel {
+  background: rgba(30,41,59,0.55) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 28px rgba(2,6,23,0.45) !important;
+}
+
+/* ---------- Sidebar (left) ---------- */
+/* Override .bg-white used in JSX for sidebar to become glass */
+.profile-settings-container .settings-sidebar {
+  background: rgba(30,41,59,0.55) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  color: #e6eef8 !important;
+  padding: 1rem !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.45) !important;
+}
+
+/* Sidebar header */
+.profile-settings-container .settings-sidebar h4 {
+  color: #ffffff !important;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+/* Settings menu list */
+.profile-settings-container .settings-menu {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.profile-settings-container .settings-menu li { margin-bottom: 0.5rem; }
+
+/* Buttons inside settings menu: scope btn-light & btn-primary appearance */
+.profile-settings-container .settings-menu .btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: transform 0.12s ease, background 0.12s ease;
+}
+
+/* Active / primary state */
+.profile-settings-container .settings-menu .btn.btn-primary {
+  background: linear-gradient(135deg,#4f46e5,#8b5cf6) !important;
+  border: none !important;
+  color: #fff !important;
+  box-shadow: 0 8px 22px rgba(79,70,229,0.12) !important;
+}
+.profile-settings-container .settings-menu .btn.btn-primary i { color: rgba(255,255,255,0.9) !important; }
+
+/* Inactive state (was btn-light in JSX) */
+.profile-settings-container .settings-menu .btn.btn-light {
+  background: rgba(255,255,255,0.02) !important;
+  border: 1px solid rgba(255,255,255,0.04) !important;
+  color: #e6eef8 !important;
+}
+.profile-settings-container .settings-menu .btn.btn-light:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.035) !important;
+}
+
+/* ---------- Main content (settings card) ---------- */
+/* Override the .bg-white / .rounded / .shadow-sm from JSX so it matches theme */
+.profile-settings-container .settings-card {
+  background: rgba(30,41,59,0.55) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  color: #e6eef8 !important;
+  border-radius: 12px !important;
+  padding: 1.25rem !important;
+  box-shadow: 0 10px 28px rgba(2,6,23,0.45) !important;
+}
+
+/* Card title */
+.profile-settings-container .settings-card h3 {
+  color: #ffffff !important;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+/* Form labels & help text */
+.profile-settings-container .form-label,
+.profile-settings-container .fw-bold {
+  color: #e6eef8 !important;
+  font-weight: 700;
+}
+.profile-settings-container .form-text,
+.profile-settings-container .small,
+.profile-settings-container .text-muted {
+  color: #94a3b8 !important;
+}
+
+/* Inputs - ensure dark glass inputs (override .bg-light used on email) */
+.profile-settings-container .form-control,
+.profile-settings-container input.form-control,
+.profile-settings-container textarea.form-control {
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  color: #e6eef8 !important;
+  border-radius: 8px !important;
+  padding: 0.6rem 0.75rem !important;
+  transition: box-shadow 0.14s ease, transform 0.08s ease !important;
+}
+
+/* Force disabled/readOnly input look */
+.profile-settings-container .form-control[disabled],
+.profile-settings-container .form-control:disabled,
+.profile-settings-container input[disabled] {
+  background: rgba(255,255,255,0.02) !important;
+  color: #9aa7bd !important;
+}
+
+/* Input placeholder */
+.profile-settings-container .form-control::placeholder {
+  color: rgba(226,232,240,0.55) !important;
+  opacity: 1 !important;
+}
+
+/* Input focus */
+.profile-settings-container .form-control:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 6px rgba(79,70,229,0.08) !important;
+  border-color: rgba(99,102,241,0.85) !important;
+  background: rgba(255,255,255,0.05) !important;
+}
+
+/* ---------- Photo upload / preview ---------- */
+.profile-settings-container .position-relative .rounded-circle {
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  background: rgba(255,255,255,0.02) !important;
+}
+
+/* Camera label (button) styling already inline — ensure hover and focus look good */
+.profile-settings-container label[for="photo"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg,#4f46e5,#8b5cf6) !important;
+  color: #fff !important;
+  border: none !important;
+  box-shadow: 0 8px 20px rgba(79,70,229,0.12) !important;
+}
+.profile-settings-container label[for="photo"]:hover {
+  transform: translateY(-2px);
+}
+
+/* Hide the raw file input (JSX already hides it) — ensure not shown accidentally */
+.profile-settings-container input[type="file"] {
+  display: none !important;
+}
+
+/* ---------- Buttons inside the form ---------- */
+.profile-settings-container .settings-card .btn.btn-primary,
+.profile-settings-container .btn-primary {
+  background: linear-gradient(135deg,#4f46e5,#ec4899) !important;
+  border: none !important;
+  color: #fff !important;
+  border-radius: 50px !important;
+  padding: 0.45rem 1rem !important;
+  font-weight: 700 !important;
+  box-shadow: 0 8px 28px rgba(79,70,229,0.12) !important;
+}
+
+.profile-settings-container .settings-card .btn.btn-outline-secondary,
+.profile-settings-container .btn-outline-secondary {
+  background: rgba(255,255,255,0.03) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  color: #cbd5e1 !important;
+}
+
+/* spacing for action buttons */
+.profile-settings-container .d-flex.gap-2 .btn { min-width: 6.875rem; } /* 110px converted to rem */
+
+/* ---------- Activity feed ---------- */
+.profile-settings-container .activity-feed .d-flex {
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+/* Activity icon circles (they are inline styles in JSX but ensure colors/text look correct) */
+.profile-settings-container .activity-feed .bg-primary,
+.profile-settings-container .activity-feed .bg-success,
+.profile-settings-container .activity-feed .bg-danger,
+.profile-settings-container .activity-feed .bg-info,
+.profile-settings-container .activity-feed .bg-secondary,
+.profile-settings-container .activity-feed .bg-warning {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 2.5rem; height: 2.5rem; /* 40px converted to rem */
+  font-size: 1.1rem;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.35);
+}
+
+/* Map bootstrap bg-* classes to theme-friendly shades where appropriate */
+.profile-settings-container .activity-feed .bg-primary { background: linear-gradient(135deg,#4f46e5,#8b5cf6) !important; color: #fff !important; }
+.profile-settings-container .activity-feed .bg-success { background: linear-gradient(135deg,#10B981,#34D399) !important; color: #04261b !important; }
+.profile-settings-container .activity-feed .bg-danger { background: linear-gradient(135deg,#ef4444,#fb7185) !important; color: #fff !important; }
+.profile-settings-container .activity-feed .bg-info { background: linear-gradient(135deg,#38bdf8,#60a5fa) !important; color: #04274a !important; }
+.profile-settings-container .activity-feed .bg-secondary { background: rgba(255,255,255,0.06) !important; color: #0f172a !important; }
+.profile-settings-container .activity-feed .bg-warning { background: linear-gradient(135deg,#fbbf24,#f97316) !important; color: #04261b !important; }
+
+/* Activity message text */
+.profile-settings-container .activity-feed p { margin-bottom: 0.25rem; color: #cbd5e1 !important; }
+.profile-settings-container .activity-feed small.text-muted { color: #94a3b8 !important; }
+
+/* Divider between activities (JSX uses border-bottom) — ensure subtle and theme-appropriate */
+.profile-settings-container .activity-feed .border-bottom {
+  border-bottom: 1px solid rgba(255,255,255,0.04) !important;
+  padding-bottom: 0.75rem;
+}
+
+/* Empty activity state styling */
+.profile-settings-container .settings-card .text-center p.text-muted,
+.profile-settings-container .settings-card .text-center i {
+  color: #94a3b8 !important;
+}
+
+/* ---------- Responsive tweaks ---------- */
+@media (max-width: 992px) {
+  .profile-settings-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .profile-settings-container .settings-sidebar { 
+    position: static; 
+    margin-bottom: 1rem; 
+  }
+
+  .profile-settings-container .settings-card { 
+    padding: 1.5rem !important; 
+  }
+
+  .profile-settings-container .d-flex.mb-4.pb-3.border-bottom { 
+    flex-direction: row; 
+    gap: 0.75rem; 
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-settings-container .settings-card {
+    padding: 1.25rem !important;
+  }
+
+  .profile-settings-container h3 {
+    font-size: 1.4rem;
+  }
+
+  .profile-settings-container .d-flex.gap-2 {
+    flex-direction: column;
+  }
+
+  .profile-settings-container .d-flex.gap-2 .btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-settings-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .profile-settings-container .settings-card {
+    padding: 1rem !important;
+  }
+
+  .profile-settings-container h3 {
+    font-size: 1.2rem;
+  }
+
+  .profile-settings-container .settings-menu .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .profile-settings-container .activity-feed .d-flex {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ---------- Last-resort overrides (prevent Bootstrap bleed) ---------- */
+.profile-settings-container .bg-white { background: transparent !important; }
+.profile-settings-container .shadow-sm { box-shadow: none !important; }
+.profile-settings-container .rounded { border-radius: 8px !important; }
+.profile-settings-container .text-dark { color: #cbd5e1 !important; }
+.profile-settings-container .text-muted { color: #94a3b8 !important; }
+
+/* Ensure buttons & inputs have accessible focus */
+.profile-settings-container .btn:focus,
+.profile-settings-container .form-control:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 6px rgba(79,70,229,0.08) !important;
+}
+
+/* ---------------------------------------------------
+   SETTINGS CARD — GLASS MORPHISM (Brand Standard)
+----------------------------------------------------*/
+.profile-settings-container .settings-card {
+  background: rgba(255, 255, 255, 0.06) !important;
+  backdrop-filter: blur(22px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(22px) saturate(140%) !important;
+
+  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45) !important;
+  padding: 2rem !important;
+}

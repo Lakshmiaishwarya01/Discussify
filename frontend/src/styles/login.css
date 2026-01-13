@@ -1,0 +1,207 @@
+/* =========================================
+   1. PAGE LAYOUT (Clean Deep Void)
+   ========================================= */
+.auth-page {
+  /* Fills the space between Navbar and bottom */
+  /* Using rem for navbar height (65px = 4.0625rem) */
+  height: calc(100vh - 4.0625rem); 
+  width: 100%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Solid Professional Navy - No Orbs */
+  background-color: #0f172a; 
+  position: relative;
+  overflow: hidden;
+  padding-top: 0; 
+}
+
+/* =========================================
+   2. THE GLASS CARD (Centered & Clean)
+   ========================================= */
+.auth-card {
+  width: 100%;
+  max-width: 28.75rem; /* 460px converted to rem (460/16) */
+  
+  /* Slightly more opaque background for readability */
+  background: rgba(30, 41, 59, 0.7); 
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 1.5rem 1.75rem;
+  
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  
+  animation: floatUp 0.6s ease-out;
+}
+
+/* Slightly relax sizing on smaller laptops/phones */
+@media (max-width: 768px) {
+  .auth-card {
+    max-width: 100%;
+    margin: 0 1.25rem;
+    padding: 1.4rem 1.5rem;
+  }
+}
+
+/* Tighter vertical rhythm for auth forms so cards aren't too tall */
+.auth-card .mb-3 {
+  margin-bottom: 0.7rem !important;
+}
+
+.auth-card .mb-4 {
+  margin-bottom: 0.9rem !important;
+}
+
+/* Reduce header spacing to pull content up slightly */
+.auth-header.text-center.mb-4 {
+  margin-bottom: 0.9rem !important;
+}
+
+@keyframes floatUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Top Accent Line */
+.auth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #4f46e5, #ec4899);
+  opacity: 1;
+}
+
+.auth-header h2 {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+.auth-header p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* =========================================
+   3. GLOWING INPUTS
+   ========================================= */
+.auth-form .form-label {
+  color: #cbd5e1;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.glass-input-group {
+  position: relative;
+}
+
+.glass-input-group i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  transition: color 0.3s;
+  pointer-events: none;
+  z-index: 2;
+  font-size: 1.1rem;
+}
+
+.glass-input {
+  width: 100%;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 0.8rem 1rem 0.8rem 2.8rem;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.glass-input::placeholder {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.glass-input:focus {
+  background: rgba(15, 23, 42, 0.9);
+  border-color: #818cf8;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+}
+
+.glass-input-group:focus-within i {
+  color: #818cf8;
+}
+
+/* =========================================
+   4. BUTTONS & LINKS
+   ========================================= */
+.btn-auth-submit {
+  width: 100%;
+  background: linear-gradient(135deg, #4f46e5 0%, #db2777 100%);
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+}
+
+.btn-auth-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(219, 39, 119, 0.5);
+  filter: brightness(1.1);
+}
+
+.btn-auth-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.auth-link {
+  color: #818cf8;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 5px;
+  transition: color 0.2s;
+}
+
+.auth-link:hover {
+  color: #c084fc;
+  text-decoration: underline;
+}
+
+.auth-error {
+  background: rgba(239, 68, 68, 0.15);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  padding: 0.8rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
